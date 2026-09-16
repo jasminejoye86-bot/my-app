@@ -15,8 +15,8 @@ export default function TextForm(props) {
           <textarea name="" id="" rows="8" value={text} onChange={HandleOnChange}></textarea><br />
           <button className="btn btn-primary" onClick={HandleUpClick}>Handle upclick</button>
           <div className="container my-3">
-            <p>{text.split(" ").length} word and {text.length} character in textArea</p>
-            <p>{0.008 * text.split(" ").length} Minutes</p>
+            <p>{text.trim().split(" ").length} word and {text.length} character in textArea</p>
+            <p>{0.008 * text.trim().split(" ").length} Minutes</p>
           </div>
         </div>
       </div>
