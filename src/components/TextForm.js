@@ -1,26 +1,26 @@
-import React, { useState } from 'react'
-export default function TextForm(props) {
-  const [text, setText] = useState("hello everyone");
-  const HandleUpClick = () => {
-    setText(text.toUpperCase());
-  }
-  const HandleOnChange = (e) => {
-    setText(e.target.value)
-  }
-  return (
-    <div>
-      <div className="container">
-        <h1>{props.heading}</h1>
-        <div className="mb-3">
-          <textarea name="" id="" rows="8" value={text} onChange={HandleOnChange}></textarea><br />
-          <button className="btn btn-primary" onClick={HandleUpClick}>Handle upclick</button>
-          <div className="container my-3">
-            <p>{text.trim().split(" ").length} word and {text.length} character in textArea</p>
-            <p>{0.008 * text.trim().split(" ").length} Minutes</p>
-          </div>
-        </div>
-      </div>
-    </div >
+// import React, { useState } from 'react'
+// export default function TextForm(props) {
+//   const [text, setText] = useState("hello everyone");
+//   const HandleUpClick = () => {
+//     setText(text.toUpperCase());
+//   }
+//   const HandleOnChange = (e) => {
+//     setText(e.target.value)
+//   }
+//   return (
+//     <div>
+//       <div className="container">
+//         <h1>{props.heading}</h1>
+//         <div className="mb-3">
+//           <textarea name="" id="" rows="8" value={text} onChange={HandleOnChange}></textarea><br />
+//           <button className="btn btn-primary" onClick={HandleUpClick}>Handle upclick</button>
+//           <div className="container my-3">
+//             <p>{text.trim().split(" ").length} word and  {text.replace(/\s/g, "").length} character in textArea</p>
+//             <p>{0.008 * text.trim().split(" ").length} Minutes</p>
+//           </div>
+//         </div>
+//       </div>
+//     </div >
 
-  )
-}
+//   )
+// }
