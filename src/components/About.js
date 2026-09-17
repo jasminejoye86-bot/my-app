@@ -6,6 +6,7 @@ export default function About() {
     color: 'white',
     backgroundColor: 'black',
   })
+  const [btnText, setbtnText] = useState("Enable light Mode")
 
 
   const ToggleMyStyle = () => {
@@ -13,19 +14,25 @@ export default function About() {
       SetmyStyle({
         color: 'black',
         backgroundColor: 'white',
+
       })
+      setbtnText("Enable dark Mode");
     }
     else {
       SetmyStyle({
         color: 'white',
         backgroundColor: 'black',
+
+
       })
+      setbtnText("Enable light Mode");
     }
 
 
   }
   return (
     <div className="container my-3" style={myStyle}>
+      <h1>About Us </h1>
       <div className="accordion" id="accordionExample">
         <div className="accordion-item">
           <h2 className="accordion-header" id="headingOne">
@@ -65,7 +72,7 @@ export default function About() {
         </div>
       </div>
       <div className="container my-3">
-        <button className='btn btn-primary' onClick={ToggleMyStyle} >Enable dark mode</button>
+        <button className='btn btn-primary' onClick={ToggleMyStyle} >{btnText}</button>
       </div>
 
     </div>
