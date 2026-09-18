@@ -8,7 +8,7 @@ export default function TextForm(props) {
         setText(e.target.value)
     }
     const RemoveSpaces = () => {
-
+        setText(text.replace(/\s+/g, " "));
     }
 
     return (
@@ -22,7 +22,7 @@ export default function TextForm(props) {
                         <p>{text.trim().split(" ").length} word and  {text.replace(/\s/g, "").length} character in textArea</p>
                         <p>{0.008 * text.trim().split(" ").length} Minutes</p>
                     </div>
-                    <button className='btn btn-primary' onclick={RemoveSpaces}>Remove Spaces</button>
+                    <button className='btn btn-primary' onClick={RemoveSpaces}>Remove Spaces</button>
                 </div>
             </div>
         </div >
