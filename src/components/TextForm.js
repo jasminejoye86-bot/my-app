@@ -19,8 +19,9 @@ export default function TextForm(props) {
                     <textarea name="" id="" rows="8" value={text} onChange={HandleOnChange}></textarea><br />
                     <button className="btn btn-primary" onClick={HandleUpClick}>Handle upclick</button>
                     <div className="container my-3">
-                        <p>{text.trim().split(" ").length} word and  {text.replace(/\s/g, "").length} character in textArea</p>
-                        <p>{0.008 * text.trim().split(" ").length} Minutes</p>
+                        <p>{text.trim().split(/\s+/g).length} words</p>
+                        <p> {text.replace(/\s+/g, "").length} character in textArea</p>
+                        <p>{0.008 * text.trim().split(/\s+/g).length} Minutes</p>
                     </div>
                     <button className='btn btn-primary' onClick={RemoveSpaces}>Remove Spaces</button>
                 </div>
