@@ -26,13 +26,16 @@ function App() {
       msg: message,
       type: type
     })
+    setTimeout(() => {
+      setAlertMsg(null);
+    }, 2000);
   }
 
   return (
     <div>
       <Navbar title="Jasmine" Mode={Mode} ToggleMode={ToggleMode} />
       <Alert AlertMsg={AlertMsg} />
-      <TextForm heading="Hyyy" Mode={Mode} />
+      <TextForm ShowAlert={ShowAlert} heading="Hyyy" Mode={Mode} AlertMsg={AlertMsg} />
       {/* <About /> */}
     </div>
 

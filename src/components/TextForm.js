@@ -3,6 +3,7 @@ export default function TextForm(props) {
     const [text, setText] = useState("hello everyone");
     const HandleUpClick = () => {
         setText(text.toUpperCase());
+        props.ShowAlert("convert to upperCase", "Success")
     }
     const HandleLoClick = () => {
         setText(text.toLowerCase());
