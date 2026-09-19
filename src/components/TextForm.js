@@ -28,7 +28,7 @@ export default function TextForm(props) {
                     <button className='btn btn-primary' onClick={RemoveSpaces}>Remove Spaces</button>
                     <button className="btn btn-primary mx-3" onClick={Dlttext}>Delete text</button>
                     <div className="container my-3">
-                        <p>{text.trim().split(/\s+/g).length} words</p>
+                        <p>{text.trim().split(/\s+/g).filter(word => word.length > 0).length} words</p>
                         <p> {text.replace(/\s+/g, "").length} character in textArea</p>
                         <p>{0.008 * text.replace(/\s+/g, "").length} Minutes</p>
                     </div>
