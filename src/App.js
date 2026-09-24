@@ -13,11 +13,19 @@ function App() {
       setMode("dark");
       document.body.style.backgroundColor = "#1b3348";
       ShowAlert("dark mode enabled", "success");
+      document.title = "TextUtils : dark Mode"
+      setInterval(() => {
+        document.title = "heyy - whatsupp";
+      }, 1000);
+      setInterval(() => {
+        document.title = "Install it";
+      }, 5000);
     }
     else {
       setMode("light");
       document.body.style.backgroundColor = "white";
       ShowAlert("light mode enabled", "success");
+      document.title = "TextUtils : light Mode"
     }
   }
   const [AlertMsg, setAlertMsg] = useState(null)
