@@ -4,7 +4,19 @@ import './App.css';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
-import React, { useActionState, useState } from 'react';
+import About from './components/About';
+import React, { useState } from 'react';
+// import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+
+
+
+
 
 function App() {
   const [Mode, setMode] = useState("light")
@@ -40,15 +52,19 @@ function App() {
   }
 
   return (
-    <div>
-      <Navbar title="Jasmine" Mode={Mode} ToggleMode={ToggleMode} />
-      <Alert AlertMsg={AlertMsg} />
-      <TextForm ShowAlert={ShowAlert} heading="Hyyy" Mode={Mode} AlertMsg={AlertMsg} />
-      {/* <About /> */}
-    </div>
+    <Router>
+      <div>
+        <Navbar title="Jasmine" Mode={Mode} ToggleMode={ToggleMode} />
+        <Alert AlertMsg={AlertMsg} />
 
+        <Routes>
+          <Route path="/about" element={<About />} />
+          <Route path="/" element={
+            <TextForm ShowAlert={ShowAlert} heading="Hyyy" Mode={Mode} AlertMsg={AlertMsg} />
+          } />
+        </Routes>
+      </div>
+    </Router>
   );
-
 }
-
 export default App;
