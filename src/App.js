@@ -6,13 +6,8 @@ import TextForm from './components/TextForm';
 import Alert from './components/Alert';
 import About from './components/About';
 import React, { useState } from 'react';
-// import React from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link
-} from "react-router-dom";
+
+
 
 
 
@@ -52,19 +47,18 @@ function App() {
   }
 
   return (
-    <Router>
-      <div>
-        <Navbar title="Jasmine" Mode={Mode} ToggleMode={ToggleMode} />
-        <Alert AlertMsg={AlertMsg} />
 
-        <Routes>
-          <Route path="/about" element={<About />} />
-          <Route path="/" element={
-            <TextForm ShowAlert={ShowAlert} heading="Hyyy" Mode={Mode} AlertMsg={AlertMsg} />
-          } />
-        </Routes>
-      </div>
-    </Router>
+    <div>
+      <Navbar title="Jasmine" Mode={Mode} ToggleMode={ToggleMode} />
+      <Alert AlertMsg={AlertMsg} />
+
+
+
+      <TextForm ShowAlert={ShowAlert} heading="Hyyy" Mode={Mode} AlertMsg={AlertMsg} />
+
+
+    </div>
+
   );
 }
 export default App;
